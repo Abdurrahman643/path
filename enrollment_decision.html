@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Enrollment Decision - Attariq Academy{% endblock title %}
+
+{% block content %}
+<div class="enrollment-decision-container animate-on-load" style="max-width: 600px; margin: 2rem auto; padding: 1rem; text-align: center;" data-aos="fade-up" data-aos-duration="1000">
+  <h1 class="animate-on-load" data-aos="fade-up" data-aos-duration="1000">Enrollment Decision</h1>
+  <form method="post" action="{% url 'logout' %}" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    {% csrf_token %}
+    <p>Do you want to proceed with enrollment?</p>
+    <button type="button" onclick="window.location.href='{% url 'enrollment_form' %}';" class="btn btn-primary">Yes</button>
+    <button type="submit" class="btn btn-danger">No</button>
+  </form>
+</div>
+{% endblock content %}
